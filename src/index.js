@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LoginPage from "./Login/LoginPage";
+import MainLayout from "./MainLayout/MainLayout";
+import UserQuery from "./UserManagement/UserQuery";
+import AddUser from "./UserManagement/AddUser";
+import ConsumeRecordQuery from "./ConsumeRecord/ConsumeRecordQuery";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ConsumeRecordQuery />
   </React.StrictMode>,
   document.getElementById('root')
 );

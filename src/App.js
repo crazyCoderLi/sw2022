@@ -23,3 +23,27 @@ function App() {
 }
 
 export default App;
+
+
+// {
+//     "statusCode": 1,
+//     "description": ".....",
+//     "record" : [
+//      {},
+//      {}
+//     ]
+// }
+//
+//
+// {
+//       statuscode: 1,
+//       description: "....",
+//       students: [
+//         {
+//
+//         } ,
+//        {
+//
+//        }
+//       ]
+// }
