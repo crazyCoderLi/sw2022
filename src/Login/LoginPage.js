@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import {Card, Form, Input, Button, Checkbox} from 'antd';
+import {Card, Form, Input, Button, Checkbox, message} from 'antd';
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 
 const LoginPage = (props) => {
+
+    const nav = useNavigate();
 
     const onFinish = (values) => {
         console.log('Success:', values);
@@ -15,6 +18,12 @@ const LoginPage = (props) => {
         })
             .then((res)=>{
                 console.log(res);
+                if(res.data.statuscode === 1){
+                    message.success(res.data.description);
+                    nav("/main");
+                }else {
+                    message.error(res.data.description);
+                }
             })
             .catch((err)=>{
                 console.log(err);

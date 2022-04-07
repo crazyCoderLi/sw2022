@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import {Card, Form, Input, Button, Checkbox, Radio, Upload, message} from 'antd';
+import {Card, Form, Input, Button, Checkbox, Radio, Upload, message, Modal} from 'antd';
 import axios from "axios";
 import {LoadingOutlined, PlusOutlined} from '@ant-design/icons';
+import {useNavigate} from "react-router-dom";
 
 
 const AddUser = (props) => {
@@ -11,6 +12,8 @@ const AddUser = (props) => {
     // const state = {
     //     loading: false,
     // };
+
+    const nav = useNavigate();
 
     const [files, setFiles] = useState();
     const beforeUpload = (file)=>{
@@ -72,9 +75,19 @@ const AddUser = (props) => {
         })
             .then((res) => {
                 console.log(res);
+                Modal.success({
+                    content: "添加成功",
+                    afterClose: ()=>window.location.reload()
+                })
+                // nav("/main/adduser");
+
             })
             .catch((err) => {
                 console.log(err);
+                // message.error("添加失败，错误原因:" + err);
+                Modal.error({
+                    content: "添加失败" + err,
+                })
             })
     };
 
@@ -87,8 +100,8 @@ const AddUser = (props) => {
             <Card title="添加用户" style={{
                 width: 400,
                 margin: "0 auto",
-                position: "relative",
-                top: "200px",
+                // position: "relative",
+                // top: "200px",
             }}>
                 <Form
                     name="basic"
