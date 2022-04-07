@@ -1,0 +1,8 @@
+.bg {
+    background-image: url("../assert/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*background: #61dafb;*/
+    width: 100%;
+    height: 100%;
+}

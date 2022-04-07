@@ -11,12 +11,12 @@ const ConsumeRecordQuery = (props) => {
     const onFinish = (values) => {
         console.log('Finish:', values);
         axios.post("http://121.37.87.123:8000/searchRecord",  {
-                sum: values.id
+                num: values.id
             }
         )
             .then((res) => {
                 console.log(res.data);
-                setData(res.data.students);
+                setData(res.data.record);
             })
             .catch((err) => {
                 console.log(err);

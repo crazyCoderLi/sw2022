@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 import {Card, Form, Input, Button, Checkbox, message} from 'antd';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import './loginpage.css'
 
 
 const LoginPage = (props) => {
@@ -16,16 +17,16 @@ const LoginPage = (props) => {
             username: values.username,
             password: values.password
         })
-            .then((res)=>{
+            .then((res) => {
                 console.log(res);
-                if(res.data.statuscode === 1){
+                if (res.data.statuscode === 1) {
                     message.success(res.data.description);
                     nav("/main");
-                }else {
+                } else {
                     message.error(res.data.description);
                 }
             })
-            .catch((err)=>{
+            .catch((err) => {
                 console.log(err);
             })
     };
@@ -35,76 +36,78 @@ const LoginPage = (props) => {
     };
 
     return (
-        <Card title="餐厅自助结算系统管理员端"  style={{
-            width: 400,
-            margin: "0 auto",
-            position: "relative",
-            top: "200px",
-        }}>
-            <Form
-                name="basic"
-                labelCol={{
-                    span: 8,
-                }}
-                wrapperCol={{
-                    span: 16,
-                }}
-                initialValues={{
-                    remember: true,
-                }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
-            >
-                <Form.Item
-                    label="用户名"
-                    name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your username!',
-                        },
-                    ]}
-                >
-                    <Input />
-                </Form.Item>
-
-                <Form.Item
-                    label="密码"
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your password!',
-                        },
-                    ]}
-                >
-                    <Input.Password />
-                </Form.Item>
-
-                <Form.Item
-                    name="remember"
-                    valuePropName="checked"
+        <div className="bg">
+            <Card title="餐厅自助结算系统管理员端" style={{
+                width: 400,
+                margin: "0 auto",
+                position: "relative",
+                top: "200px",
+            }}>
+                <Form
+                    name="basic"
+                    labelCol={{
+                        span: 8,
+                    }}
                     wrapperCol={{
-                        offset: 8,
                         span: 16,
                     }}
-                >
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
-                <Form.Item
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
+                    initialValues={{
+                        remember: true,
                     }}
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    autoComplete="off"
                 >
-                    <Button type="primary" htmlType="submit">
-                        登录
-                    </Button>
-                </Form.Item>
-            </Form>
-        </Card>
+                    <Form.Item
+                        label="用户名"
+                        name="username"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your username!',
+                            },
+                        ]}
+                    >
+                        <Input/>
+                    </Form.Item>
+
+                    <Form.Item
+                        label="密码"
+                        name="password"
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Please input your password!',
+                            },
+                        ]}
+                    >
+                        <Input.Password/>
+                    </Form.Item>
+
+                    <Form.Item
+                        name="remember"
+                        valuePropName="checked"
+                        wrapperCol={{
+                            offset: 8,
+                            span: 16,
+                        }}
+                    >
+                        <Checkbox>Remember me</Checkbox>
+                    </Form.Item>
+
+                    <Form.Item
+                        wrapperCol={{
+                            offset: 8,
+                            span: 16,
+                        }}
+                    >
+                        <Button type="primary" htmlType="submit">
+                            登录
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </Card>
+        </div>
     );
 }
 
