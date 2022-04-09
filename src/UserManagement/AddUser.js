@@ -98,18 +98,19 @@ const AddUser = (props) => {
     return (
         <div>
             <Card title="添加用户" style={{
-                width: 400,
-                margin: "0 auto",
+                width: "30vw",
+                height: "60vh",
+                margin: "10vh auto",
                 // position: "relative",
                 // top: "200px",
             }}>
                 <Form
                     name="basic"
                     labelCol={{
-                        span: 8,
+                        span: 7,
                     }}
                     wrapperCol={{
-                        span: 16,
+                        span: 12,
                     }}
                     initialValues={{
                         remember: true,

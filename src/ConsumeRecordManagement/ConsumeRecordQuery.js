@@ -42,7 +42,7 @@ const ConsumeRecordQuery = (props) => {
     return (
         <div>
 
-            <Form name="horizontal_login" layout="inline" onFinish={onFinish}>
+            <Form name="horizontal_login" size="large" layout="inline" onFinish={onFinish}>
                 <Form.Item
                     name="id"
                 >
@@ -71,6 +71,9 @@ const ConsumeRecordQuery = (props) => {
             <Table
                 columns={columns}
                 dataSource={data}
+                style={{
+                    marginTop: "3vh"
+                }}
             ></Table>
         </div>
     )

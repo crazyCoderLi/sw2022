@@ -37,7 +37,8 @@ const LoginPage = (props) => {
 
     return (
         <div className="bg">
-            <Card title="餐厅自助结算系统管理员端" style={{
+            <h1 className="title">欢迎登录餐厅自助结算系统管理员端</h1>
+            <Card title="管理员登录" style={{
                 width: 400,
                 margin: "0 auto",
                 position: "relative",
