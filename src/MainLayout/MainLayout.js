@@ -71,7 +71,7 @@ const MainLayout = () => {
                                 <Menu.Item key="UserQuery">查询人员信息</Menu.Item>
                             </SubMenu>
                             <SubMenu key="DatasetManagement" title="充值管理">
-                                <Menu.Item key="DatasetManagementPage">充值管理npm</Menu.Item>
+                                <Menu.Item key="DatasetManagementPage">充值管理</Menu.Item>
                             </SubMenu>
                             <SubMenu key="ConsumeRecordManagement" title="明细管理">
                                 <Menu.Item key="ConsumeRecordQuery">明细查询</Menu.Item>
